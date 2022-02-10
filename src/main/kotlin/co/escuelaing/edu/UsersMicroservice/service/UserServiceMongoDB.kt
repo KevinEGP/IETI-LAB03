@@ -1,27 +1,39 @@
 package co.escuelaing.edu.UsersMicroservice.service
-   
+
+import co.escuelaing.edu.UsersMicroservice.data.User
+import org.springframework.stereotype.Service
+import org.springframework.beans.factory.annotation.Autowired;
+import co.escuelaing.edu.UsersMicroservice.dto.UserDto
+import co.escuelaing.edu.UsersMicroservice.repository.UserRepository
+
+@Service
 class UserServiceMongoDB(@Autowired userRepository: UserRepository): UserService {
 
     private val userRepository: UserRepository;
 
-    override fun  create( User user ): User {
-        return null;
+    override fun  create(user: User ): User {
+        // return userRepository.put(user.id, user)
+        return User()
     }
 
-    override fun  findById( String id ): User {
-        return null;
+    @Override
+    fun  findById( id: String ): User {
+        // return userRepository.get(id)
+        return User()
     }
 
-    override fun  all(): List<User> {
-        return null;
+    override fun  getAll(): List<User> {
+        // return ArrayList<User?>(userRepository.values)
+        return ArrayList<User?>()
     }
 
-    override fun  deleteById( String id ): boolean {
-        return false;
+    override fun  deleteById( id: String ) {
+        // userRepository.remove(id);
     }
 
-    override fun  update( UserDto userDto, String id ): User {
-        return null;
+    fun  update( userDto: UserDto, id: String ): User {
+        // return userRepository.put(id, userDto)
+        return User()
     }
 
     init {

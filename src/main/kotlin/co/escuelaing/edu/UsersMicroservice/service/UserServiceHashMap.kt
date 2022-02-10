@@ -3,7 +3,7 @@ package co.escuelaing.edu.UsersMicroservice.service
 import co.escuelaing.edu.UsersMicroservice.data.User
 import org.springframework.stereotype.Service
 
-@Service
+// @Service
 class UserServiceHashMap : UserService {
     private val usersHashMap: HashMap<String, User> = HashMap()
 
@@ -20,7 +20,7 @@ class UserServiceHashMap : UserService {
     }
 
     override fun deleteById(id: String) {
-        usersHashMap.remove(id)
+        return usersHashMap.remove(id)
     }
 
     override fun update(user: User, userId: String): User? {
