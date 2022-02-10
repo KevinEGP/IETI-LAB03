@@ -20,7 +20,7 @@ class UserServiceHashMap : UserService {
     }
 
     override fun deleteById(id: String) {
-        return usersHashMap.remove(id)
+        usersHashMap.remove(id)
     }
 
     override fun update(user: User, userId: String): User? {
